@@ -14,5 +14,3 @@ The project uses:
 - Add cards
 - Delete the board
 - Logout (with browser close)
-
-## 📁 Folder Structure

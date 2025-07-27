@@ -1,4 +1,4 @@
-// tests/support/testSetup.js
+// tests/support/testSetup.spec.js
 import { test as base, expect } from '@playwright/test';
 import { TrelloHomePage } from '../../com/trello/myproject/pom/TrelloHomePage';
 import { TrelloLoginPage } from '../../com/trello/myproject/pom/TrelloLoginPage';
@@ -33,7 +33,7 @@ export const test = base.extend({
     await boardsPage.logoutOption.click();
     await logoutPage.logoutButton.click();
 
-    pageWithLogin.close()
+   // pageWithLogin.close()
   
     
   },

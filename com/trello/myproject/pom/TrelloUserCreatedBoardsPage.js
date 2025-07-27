@@ -9,7 +9,7 @@ class TrelloUserCreatedBoardsPage {
 
     // Locators
     this.profileIcon = page.locator("//div[@class='Tp0C38uQUEpYUw']//button[@aria-label='Show menu']");
-    this.profileIcon1 = page.locator("//span[@title='Nikhil Nandigoud (nikhilnandigoud)']");
+    this.profileIcon123 = page.locator("//span[@title='Nikhil Nandigoud (nikhilnandigoud)']");
     this.addCard = page.locator("//div/button[text()='Add list']");
     this.moreOption = page.locator("//ul/li/a[@class='board-menu-navigation-item-link js-open-more']");
     this.closeBoard = page.locator("//li[20]//button[1]");
@@ -38,6 +38,9 @@ class TrelloUserCreatedBoardsPage {
 
   async clickDeleteBoardTextLink() {
     await this.deletePermenantLinltext.click();
+  }
+  async clickProfileIcon() {
+    await this.profileIcon.click();
   }
 
   async clickDeleteBoardButton() {

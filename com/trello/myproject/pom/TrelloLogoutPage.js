@@ -6,14 +6,15 @@ class TrelloLogoutPage {
    */
   constructor(page) {
     this.page = page;
-
-    // Define locator for the logout button
     this.logoutButton = page.locator("//button[@id='logout-submit']");
   }
 
   async clickLogoutButton() {
+    // Ensure the logout button is visible and enabled before clicking
+    await this.logoutButton.waitFor({ state: 'visible' });
     await this.logoutButton.click();
   }
 }
 
 module.exports = { TrelloLogoutPage };
+// Export the class for use in other files

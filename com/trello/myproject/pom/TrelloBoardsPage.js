@@ -1,12 +1,8 @@
 // com/trello/myproject/pom/TrelloBoardsPage.js
 
 class TrelloBoardsPage {
-  /**
-   * @param {import('@playwright/test').Page} page
-   */
   constructor(page) {
     this.page = page;
-
     this.createBoard = page.locator("//span[normalize-space()='Create new board']");
     this.qasm6Board = page.locator("//div[@title='qasm6']");
     this.boardTitleInput = page.locator("//input[@type='text']");
@@ -15,26 +11,21 @@ class TrelloBoardsPage {
     this.logoutOption = page.locator("//button[@data-testid='account-menu-logout']//span[@class='bH80RvHHmoWYhk']");
     this.createStaticBoard = page.locator("//p[@class='szBTSFrvPTLGHM']");
     this.createStaticBoardClick = page.locator("//span[normalize-space()='Create board']");
+    this.BoardsButton = page.locator("//span[@class='QEGH0t6lsxm4C9 u_1vIqpbgZLsMp'][normalize-space()='Boards']");
   }
 
-  // Methods to interact with the elements
-  async clickCreateBoard() {
-    await this.createBoard.click();
-  }
-
-  async fillBoardTitle(title) {
-    await this.boardTitleInput.fill(title);
-  }
-
-  async clickCreateBoardButton() {
-    await this.createBoardButton.click();
+  async clickBoardsButton() {
+    await this.BoardsButton.waitFor({ state: 'visible' });
+    await this.BoardsButton.click();
   }
 
   async clickProfileIcon() {
+    await this.profileIcon.waitFor({ state: 'visible' });
     await this.profileIcon.click();
   }
 
   async clickLogout() {
+    await this.logoutOption.waitFor({ state: 'visible' });
     await this.logoutOption.click();
   }
 

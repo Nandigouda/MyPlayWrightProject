@@ -14,12 +14,14 @@ class TrelloUserCreatedBoardsPage {
     this.moreOption = page.locator("//ul/li/a[@class='board-menu-navigation-item-link js-open-more']");
     this.closeBoard = page.locator("//li[20]//button[1]");
     this.closeBoardButton = page.locator("//button[normalize-space()='Close']");
-    this.deletePermenantLinltext = page.locator("//li/button[text()='Permanently delete board']");
-    this.deletePermanentButton = page.locator("//button[normalize-space()='Permanently delete board']");
+    this.deletePermenantLinltext = page.locator("//button[normalize-space()='Permanently delete board']");
+    this.deletePermanentButton = page.locator("//button[normalize-space()='Delete']");
     this.addcardbutton = page.locator("//div/button[text()='Add list']");
+    
   }
 
   // Methods (optional for cleaner tests)
+
   async clickAddCard() {
     await this.addCard.click();
   }

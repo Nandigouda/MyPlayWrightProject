@@ -28,14 +28,11 @@ export const test = base.extend({
 
     const boardsPage = new TrelloBoardsPage(page);
     const logoutPage = new TrelloLogoutPage(page);
-
-    await boardsPage.profileIcon.click();
-    await boardsPage.logoutOption.click();
-    await logoutPage.logoutButton.click();
-
-   // pageWithLogin.close()
-  
-    
+await boardsPage.clickBoardsButton();
+await boardsPage.clickProfileIcon();
+await boardsPage.clickLogout();
+await logoutPage.logoutButton.click();
+    await page.close();
   },
 });
 

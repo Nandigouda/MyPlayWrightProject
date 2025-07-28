@@ -48,6 +48,9 @@ test.describe('Trello End-to-End Flow', () => {
       await createdPage.profileIcon.click();
       await createdPage.deletePermenantLinltext.click();
       await createdPage.deletePermanentButton.click();
+      
+     
+
     });
   });
 });

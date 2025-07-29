@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
-
+// Optional viewport from env
+const width = process.env.VIEWPORT_WIDTH ? parseInt(process.env.VIEWPORT_WIDTH) : undefined;
+const height = process.env.VIEWPORT_HEIGHT ? parseInt(process.env.VIEWPORT_HEIGHT) : undefined;
+const customViewport = (width && height) ? { viewport: { width, height } } : {};
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -45,21 +48,30 @@ export default defineConfig({
     video: 'retain-on-failure',
   },
 
-  /* Configure projects for major browsers */
+ /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        ...customViewport
+      },
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: {
+        ...devices['Desktop Firefox'],
+        ...customViewport
+      },
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: {
+        ...devices['Desktop Safari'],
+        ...customViewport
+      },
     },
 
     /* Test against mobile viewports. */
@@ -81,6 +93,7 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+
   ],
 
   /* Run your local dev server before starting the tests */

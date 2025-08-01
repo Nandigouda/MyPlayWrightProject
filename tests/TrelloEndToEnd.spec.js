@@ -3,15 +3,16 @@ import { test, expect } from './support/testSetup';
 import { TrelloBoardsPage } from '../com/trello/myproject/pom/TrelloBoardsPage';
 import { TrelloUserCreatedBoardsPage } from '../com/trello/myproject/pom/TrelloUserCreatedBoardsPage';
 import { readPropertyFile } from '../com/trello/myproject/genericutility/fileUtility';
-import { label, step, attachScreenshot } from '../com/trello/myproject/genericutility/allureHelper'; // ✅ Correct
+import { label, step, attachScreenshot } from '../com/trello/myproject/genericutility/allureHelper';
 
-let boardTitle, boardTitle2, title1;
+let boardTitle, boardTitle2, title1, url1;
 
 test.describe('Trello End-to-End Flow', () => {
   test.beforeAll(async () => {
     boardTitle = await readPropertyFile('boardTitle');
     boardTitle2 = await readPropertyFile('boardTitle2');
     title1 = await readPropertyFile('title1');
+    url1 = await readPropertyFile('url1');
   });
 
   test('Create board, add cards, and delete board', async ({ pageWithLogin }) => {
@@ -26,7 +27,7 @@ test.describe('Trello End-to-End Flow', () => {
     await step('Create board', async () => {
       await pageWithLogin.waitForTimeout(2000);
       await expect(pageWithLogin).toHaveTitle(title1);
-      await expect(pageWithLogin).toHaveURL('https://trello.com/u/nikhilnandigoud/boards');
+      await expect(pageWithLogin).toHaveURL(url1);
       await boardsPage.createBoard.click();
       await boardsPage.boardTitleInput.fill(boardTitle);
       await boardsPage.createBoardButton.click();

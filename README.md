@@ -93,8 +93,3 @@ Nikhil Nandigoud – Self-initiated project for upskilling in Playwright, CI/CD,
 🔐 Security Notice
 .env and test-data/ folders are excluded via .gitignore to avoid exposing sensitive credentials.
 If you clone this repo, create your own local config files as described above.
-
-Useful Links
-Playwright Docs
-Allure Reporting
-Jenkins CI/CD

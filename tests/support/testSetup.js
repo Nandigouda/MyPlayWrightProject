@@ -5,13 +5,16 @@ import { TrelloLoginPage } from '../../com/trello/myproject/pom/TrelloLoginPage'
 import { TrelloPasswordPage } from '../../com/trello/myproject/pom/TrelloPasswordPage';
 import { TrelloBoardsPage } from '../../com/trello/myproject/pom/TrelloBoardsPage';
 import { TrelloLogoutPage } from '../../com/trello/myproject/pom/TrelloLogoutPage';
-import { readPropertyFile } from '../../com/trello/myproject/genericutility/fileUtility';
+import dotenv from 'dotenv';
+
+dotenv.config(); // ✅ Load environment variables from .env file
 
 export const test = base.extend({
   pageWithLogin: async ({ page }, use) => {
-    const username = await readPropertyFile('username');
-    const password = await readPropertyFile('password');
-    const url = await readPropertyFile('url');
+    // 🔐 Secure way to fetch credentials
+    const username = process.env.TRELLO_USERNAME;
+    const password = process.env.TRELLO_PASSWORD;
+    const url = process.env.TRELLO_URL;
 
     const homePage = new TrelloHomePage(page);
     const loginPage = new TrelloLoginPage(page);
@@ -24,14 +27,16 @@ export const test = base.extend({
     await pwdPage.enterPwd.fill(password);
     await pwdPage.clickOnPwdButton.click();
 
-    await use(page);
+    await use(page); // Run the test steps
 
     const boardsPage = new TrelloBoardsPage(page);
     const logoutPage = new TrelloLogoutPage(page);
-await boardsPage.clickBoardsButton();
-await boardsPage.clickProfileIcon();
-await boardsPage.clickLogout();
-await logoutPage.logoutButton.click();
+
+    await boardsPage.clickBoardsButton();
+    await boardsPage.clickProfileIcon();
+    await boardsPage.clickLogout();
+    await logoutPage.logoutButton.click();
+
     await page.close();
   },
 });

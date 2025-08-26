@@ -12,8 +12,16 @@ class TrelloBoardsPage {
     this.createStaticBoard = page.locator("//p[@class='szBTSFrvPTLGHM']");
     this.createStaticBoardClick = page.locator("//span[normalize-space()='Create board']");
     this.BoardsButton = page.locator("//span[@class='QEGH0t6lsxm4C9 u_1vIqpbgZLsMp'][normalize-space()='Boards']");
+    this.TrelloDropDown= page.locator("//section[@class='IyWeSHzb5z4TTx']//a[@class='wNdgQfwraPxaK7']");
+
   }
 
+
+  async clickDropDown(){
+    await this.TrelloDropDown.waitFor({state :'visible'});
+    await this.TrelloDropDown.click();
+  }
+  
   async clickBoardsButton() {
     await this.BoardsButton.waitFor({ state: 'visible' });
     await this.BoardsButton.click();

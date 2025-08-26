@@ -32,7 +32,10 @@ export const test = base.extend({
     const boardsPage = new TrelloBoardsPage(page);
     const logoutPage = new TrelloLogoutPage(page);
 
+
+    await boardsPage.clickDropDown();
     await boardsPage.clickBoardsButton();
+
     await boardsPage.clickProfileIcon();
     await boardsPage.clickLogout();
     await logoutPage.logoutButton.click();

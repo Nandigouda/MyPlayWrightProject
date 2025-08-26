@@ -88,7 +88,7 @@ Jenkins pipeline installs dependencies, runs tests, and publishes Allure reports
 CI is triggered via GitHub commits.
 
 🤝 Contributors
-Nikhil Nandigoud – Self-initiated project for upskilling in Playwright, CI/CD, and reporting.
+Nikhil Nandigoud – Self-initiated project for upskilling in Playwright with JS, CI/CD, and reporting.
 
 🔐 Security Notice
 .env and test-data/ folders are excluded via .gitignore to avoid exposing sensitive credentials.

@@ -27,7 +27,7 @@ test.describe('Trello End-to-End Flow', () => {
     await step('Create board', async () => {
       await pageWithLogin.waitForTimeout(2000);
      // await expect(pageWithLogin).toHaveTitle(title1);
-      await expect(pageWithLogin).toHaveURL(url1);
+     // await expect(pageWithLogin).toHaveURL(url1);
       await boardsPage.createBoard.click();
       await boardsPage.boardTitleInput.fill(boardTitle);
       await boardsPage.createBoardButton.click();

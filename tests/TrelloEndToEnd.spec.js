@@ -16,7 +16,7 @@ test.describe('Trello End-to-End Flow', () => {
   });
 
   test('Create board, add cards, and delete board', {tag: '@End-To-End Scenario'}, async ({ pageWithLogin }) => {
-    label('owner', 'Nikhil');
+    label('owner', 'Nikhil Nandigouda');
     label('severity', 'critical');
     label('feature', 'Trello Board Management');
 

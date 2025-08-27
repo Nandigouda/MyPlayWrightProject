@@ -18,5 +18,6 @@
     "dotenv": "^17.2.1",
     "properties-reader": "^2.3.0",
     "sharp": "^0.34.3"
+    
   }
 }

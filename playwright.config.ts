@@ -42,6 +42,7 @@ export default defineConfig({
     /* Maximum time navigation actions like `goto()`, `reload()` can take. Defaults to 0 (no limit). */
     navigationTimeout: 30000,
     
+    
     /* Whether to automatically accept all dialogs like `alert`, `confirm`, `prompt` etc. Defaults to false. */
     acceptDownloads: true,
     

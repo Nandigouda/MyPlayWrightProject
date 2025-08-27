@@ -15,7 +15,7 @@ test.describe('Trello End-to-End Flow', () => {
     url1 = await readPropertyFile('url1');
   });
 
-  test('Create board, add cards, and delete board', async ({ pageWithLogin }) => {
+  test('Create board, add cards, and delete board', {tag: '@End-To-End Scenario'}, async ({ pageWithLogin }) => {
     label('owner', 'Nikhil');
     label('severity', 'critical');
     label('feature', 'Trello Board Management');
@@ -47,6 +47,8 @@ test.describe('Trello End-to-End Flow', () => {
       await pageWithLogin.keyboard.press('Enter');
       await pageWithLogin.keyboard.type('Card 2');
       await createdPage.addCard.click();
+      const screenshot1 = await pageWithLogin.screenshot();
+      attachScreenshot('After board creation', screenshot1);
     });
 
     // Step 3: Delete the Created Board
@@ -57,6 +59,8 @@ test.describe('Trello End-to-End Flow', () => {
       await createdPage.profileIcon.click();
       await createdPage.deletePermenantLinltext.click();
       await createdPage.deletePermanentButton.click();
+      const screenshot2 = await pageWithLogin.screenshot();
+      attachScreenshot('After board creation', screenshot2);
     });
   });
 });

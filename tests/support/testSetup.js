@@ -26,8 +26,8 @@ export const test = base.extend({
     await loginPage.loginContinueButton.click();
     await pwdPage.enterPwd.fill(password);
     await pwdPage.clickOnPwdButton.click();
-
-    await use(page); // Run the test steps
+      
+      await use(page); // Run the test steps
 
     const boardsPage = new TrelloBoardsPage(page);
     const logoutPage = new TrelloLogoutPage(page);
@@ -39,7 +39,6 @@ export const test = base.extend({
     await boardsPage.clickProfileIcon();
     await boardsPage.clickLogout();
     await logoutPage.logoutButton.click();
-
     await page.close();
   },
 });

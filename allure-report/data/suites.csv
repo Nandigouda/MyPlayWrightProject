@@ -1,4 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","28820","Create board, add cards, and delete board","chromium","Tue Aug 26 22:02:50 IST 2025","passed","Tue Aug 26 22:03:19 IST 2025","Trello End-to-End Flow","TrelloEndToEnd.spec.js","",""
-"","39821","Create board, add cards, and delete board","firefox","Tue Aug 26 21:51:25 IST 2025","passed","Tue Aug 26 21:52:05 IST 2025","Trello End-to-End Flow","TrelloEndToEnd.spec.js","",""
-"","68872","Create board, add cards, and delete board","webkit","Tue Aug 26 21:52:09 IST 2025","passed","Tue Aug 26 21:53:17 IST 2025","Trello End-to-End Flow","TrelloEndToEnd.spec.js","",""

@@ -30,7 +30,7 @@ It demonstrates automation design using **Page Object Model (POM)**, secure conf
 ---
 
 ## 🗂️ Project Structure
-```bash
+
 project-root/
 │── src/               # Page Objects & Utilities
 │── tests/             # Playwright test specs

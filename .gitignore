@@ -1,5 +1,7 @@
 # Env files
 .env
+.vscode
+.github
 
 # Playwright outputs
 test-results/
@@ -15,4 +17,7 @@ node_modules/
 # Test data
 test-data/
 
-
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/

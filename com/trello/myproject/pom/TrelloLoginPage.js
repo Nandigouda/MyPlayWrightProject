@@ -8,7 +8,7 @@ class TrelloLoginPage {
     this.page = page;
 
     // Define locators
-    this.enterMail = page.locator("//input[@id='username-uid1']");
+    this.enterMail = page.locator("//input[@id='username-uid11']");
     this.loginContinueButton = page.locator("//span[normalize-space()='Continue']");
   }
 
